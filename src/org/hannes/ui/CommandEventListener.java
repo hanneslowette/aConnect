@@ -29,11 +29,6 @@ public class CommandEventListener implements Listener {
 	private final Display display;
 
 	/**
-	 * The progressdialog
-	 */
-	private final ProgressDialog progressDialog;
-
-	/**
 	 * Creates a default command event listener
 	 * 
 	 * @param command
@@ -41,11 +36,15 @@ public class CommandEventListener implements Listener {
 	public CommandEventListener(Display display, String... command) {
 		this.command = command;
 		this.display = display;
-		this.progressDialog = new ProgressDialog(display, new Shell(SWT.SHELL_TRIM & (~SWT.RESIZE)));
 	}
 
 	@Override
 	public void handleEvent(Event event) {
+		/*
+		 * 
+		 */
+		final ProgressDialog progressDialog = new ProgressDialog(display, new Shell(SWT.SHELL_TRIM & (~SWT.RESIZE)));
+		
 		/*
 		 * Open the progress dialog
 		 */
